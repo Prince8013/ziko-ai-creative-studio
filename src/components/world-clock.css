@@ -1,0 +1,31 @@
+.world-clock {
+  direction: rtl;
+  padding: 22px;
+  border: 1px solid rgba(255,255,255,.8);
+  border-radius: 28px;
+  background: linear-gradient(135deg, rgba(255,255,255,.82), rgba(228,249,255,.7));
+  box-shadow: 0 18px 45px rgba(26,74,143,.12);
+}
+.world-clock__header { display:flex; align-items:flex-start; justify-content:space-between; gap:24px; margin-bottom:20px; }
+.world-clock__eyebrow { color:#1845d8; font-size:.75rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+.world-clock h2 { margin:6px 0; color:#0f2347; font-size:clamp(1.45rem,3vw,2.2rem); }
+.world-clock p { margin:0; color:#5f7294; }
+.world-clock__now { min-width:180px; padding:14px 16px; border-radius:18px; color:white; text-align:center; background:linear-gradient(135deg,#1845d8,#2dc4d3); box-shadow:0 12px 25px rgba(24,69,216,.2); }
+.world-clock__now small,.world-clock__now strong { display:block; }
+.world-clock__now strong { margin-top:5px; font-size:1.45rem; direction:ltr; }
+.world-clock__search { display:flex; align-items:center; gap:9px; max-width:430px; margin-bottom:18px; padding:11px 14px; border:1px solid rgba(15,69,130,.12); border-radius:14px; background:rgba(255,255,255,.78); }
+.world-clock__search input { width:100%; border:0; outline:0; background:transparent; color:#0f2347; }
+.world-clock__grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:14px; }
+.clock-card { position:relative; padding:17px; border:1px solid rgba(24,69,216,.08); border-radius:21px; background:rgba(255,255,255,.72); transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease; }
+.clock-card:hover { transform:translateY(-3px); box-shadow:0 14px 30px rgba(24,69,216,.12); }
+.clock-card--favorite { border-color:rgba(49,209,199,.45); }
+.clock-card__topline { display:flex; justify-content:space-between; align-items:center; }
+.clock-card__flag { font-size:1.8rem; }
+.clock-card__favorite { border:0; background:transparent; color:#d6a72d; font-size:1.35rem; cursor:pointer; padding:4px; }
+.clock-card h3 { margin:14px 0 2px; color:#0f2347; }
+.clock-card p { font-size:.82rem; }
+.clock-card time { display:block; margin:18px 0 3px; color:#1845d8; direction:ltr; font-size:1.65rem; font-weight:800; letter-spacing:.03em; }
+.clock-card small { display:block; color:#5f7294; }
+.clock-card__zone { display:inline-block; margin-top:13px; padding:5px 8px; border-radius:999px; background:rgba(24,69,216,.06); color:#5f7294; font-size:.68rem; direction:ltr; }
+.world-clock__empty { padding:28px; border-radius:18px; background:rgba(24,69,216,.04); color:#5f7294; text-align:center; }
+@media (max-width:640px) { .world-clock__header { flex-direction:column; } .world-clock__now { width:100%; } }
