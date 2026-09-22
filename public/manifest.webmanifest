@@ -1,0 +1,17 @@
+{
+  "name": "Ziko AI Creative Studio",
+  "short_name": "Ziko Studio",
+  "description": "Premium RTL-first AI creative production studio for Egyptian Arabic storytelling.",
+  "lang": "ar",
+  "dir": "rtl",
+  "display": "standalone",
+  "start_url": "/",
+  "theme_color": "#1845d8",
+  "background_color": "#f4fbff",
+  "icons": [{
+    "src": "/ziko-icon.svg",
+    "sizes": "any",
+    "type": "image/svg+xml",
+    "purpose": "any maskable"
+  }]
+}

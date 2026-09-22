@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Ziko">
+  <defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#1845d8"/><stop offset=".55" stop-color="#2dc4d3"/><stop offset="1" stop-color="#7fe7cb"/></linearGradient></defs>
+  <rect width="128" height="128" rx="34" fill="#f4fbff"/>
+  <circle cx="64" cy="64" r="43" fill="url(#g)"/>
+  <path d="M40 43h48v12L58 79h30v12H40V79l30-24H40z" fill="white"/>
+</svg>
