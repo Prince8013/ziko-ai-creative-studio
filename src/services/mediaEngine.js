@@ -1,13 +1,15 @@
-const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || '').replace(/\/$/, '');
+const configuredBaseUrl = (import.meta.env.VITE_API_BASE_URL || '').replace(/\/$/, '');
+const API_BASE_URL = configuredBaseUrl || (import.meta.env.DEV ? '' : '');
 
 export const mediaEngineConfig = {
-  connected: Boolean(API_BASE_URL),
-  baseUrl: API_BASE_URL,
+  // In local Vite development, an empty base URL uses the Vite proxy.
+  connected: Boolean(API_BASE_URL) || import.meta.env.DEV,
+  baseUrl: API_BASE_URL || '(Vite proxy → localhost:8787)',
   demoMode: import.meta.env.VITE_DEMO_MODE === 'true',
 };
 
 async function callEngine(path, options = {}) {
-  if (!API_BASE_URL) {
+  if (!mediaEngineConfig.connected) {
     throw new Error('Media Engine غير متصل: أضف VITE_API_BASE_URL لخادم Backend آمن.');
   }
 
@@ -21,6 +23,7 @@ async function callEngine(path, options = {}) {
 }
 
 export const mediaEngine = {
+  health: () => callEngine('/health'),
   generateMusic: (input) => callEngine('/api/media/music', { method: 'POST', body: JSON.stringify(input) }),
   getMusicStatus: (taskId) => callEngine(`/api/media/music/${encodeURIComponent(taskId)}`),
   generateVoice: (input) => callEngine('/api/media/voice', { method: 'POST', body: JSON.stringify(input) }),
